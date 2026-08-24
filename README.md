@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Planejai
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O Planejai é uma aplicação web que ajuda o usuário a organizar informações
+financeiras e planejar uma meta de forma simples e orientada. A proposta é
+transformar dados do dia a dia em uma visão mais clara sobre o caminho até um
+objetivo financeiro.
 
-Currently, two official plugins are available:
+## Como funciona
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O usuário preenche um formulário dividido em etapas, informando:
 
-## React Compiler
+- Renda mensal
+- Custos fixos
+- Dívidas e parcelas
+- Nome e custo da meta
+- Prazo desejado para alcançar o objetivo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Uma barra de progresso indica a etapa atual e permite voltar para revisar os
+dados. Ao finalizar o formulário, a simulação é salva no armazenamento local do
+navegador e o usuário é encaminhado para a tela de resultado.
 
-## Expanding the ESLint configuration
+## Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Lucide React
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Estrutura
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+O código é organizado por responsabilidade, com componentes reutilizáveis,
+páginas, rotas, hooks, contexto de tema, dados da simulação e utilitários.
+O projeto também possui suporte a tema claro e escuro e utiliza o `localStorage`
+para manter as simulações realizadas no navegador.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Como executar
+
+Instale as dependências:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Inicie o servidor de desenvolvimento:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+## Outros comandos
+
+```bash
+npm run lint
+npm run format
+npm run format:check
 ```

@@ -18,7 +18,7 @@ tipo(escopo): Descrição direta da alteração
 ## Tipos de alteração
 
 | Tipo     | Uso                                                 |
-|----------|-----------------------------------------------------|
+| -------- | --------------------------------------------------- |
 | feat     | Nova funcionalidade                                 |
 | fix      | Correção de bug ou comportamento incorreto          |
 | update   | Melhoria ou ajuste em algo já existente             |
@@ -35,7 +35,7 @@ tipo(escopo): Descrição direta da alteração
 ## Escopos do projeto
 
 | Escopo  | Uso                                     |
-|---------|-----------------------------------------|
+| ------- | --------------------------------------- |
 | ui      | Interface visual em geral               |
 | layout  | Estrutura e posicionamento de elementos |
 | nav     | Navegação / menu                        |
@@ -61,12 +61,15 @@ tipo(escopo): Descrição direta da alteração
 ```
 style(sidebar): Remove bordas e fundo dos headers do accordion
 ```
+
 ```
 style(nav): Altera subtema ativo para formato pill arredondado
 ```
+
 ```
 fix(nav): Corrige corte de subtemas em temas com mais de 15 itens
 ```
+
 ```
 data(respostas): Atualiza modelos de resposta do tema CERTIFICADO
 ```
@@ -89,7 +92,6 @@ update(script): Melhora renderização das respostas com tags HTML
 - Adiciona estilos para p, ul, ol e li dentro das respostas
 - Preserva white-space: pre-wrap apenas para textos sem HTML
 ```
-
 
 ## Regras gerais
 
